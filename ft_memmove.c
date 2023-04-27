@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:11:15 by alcarden          #+#    #+#             */
-/*   Updated: 2023/04/20 12:04:28 by alcarden         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:40:19 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*tmp;
 	char	*d;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	tmp = (char *)src;

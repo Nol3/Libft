@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:03:30 by alcarden          #+#    #+#             */
-/*   Updated: 2023/04/20 21:08:30 by alcarden         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:40:53 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 {
 	int				i;
 	int				size;
-	unsigned char	*ptr;
+	char			*ptr;
 
 	i = 0;
 	size = ft_strlen(s);

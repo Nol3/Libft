@@ -6,7 +6,7 @@
 #    By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 18:01:17 by alcarden          #+#    #+#              #
-#    Updated: 2023/04/27 13:00:54 by alcarden         ###   ########.fr        #
+#    Updated: 2023/04/27 19:30:49 by alcarden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,31 +47,42 @@ FILES = ft_atoi.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 		ft_itoa.c\
-		ft_lstnew.c\
-		ft_lstadd_front.c\
-		ft_lstsize.c\
-		ft_lstlast.c\
-		ft_lstadd_back.c\
-		ft_lstdeone.c\
-		ft_lstclear.c\
-		ft_lstiter.c\
-		ft_lstmap.c
+		ft_split.c
 
 OBJ = $(FILES:.c=.o)
 
-all: $(NAME)
+BONUS = ft_lstnew_bonus.c\
+		ft_lstadd_front_bonus.c\
+		ft_lstsize_bonus.c\
+		ft_lstlast_bonus.c\
+		ft_lstadd_back_bonus.c\
+		ft_lstdelone_bonus.c\
+		ft_lstclear_bonus.c\
+		ft_lstiter_bonus.c\
+		ft_lstmap_bonus.c
+
+BOBJECTS=$(BONUS:.c=.o)
+
+FLAGS = -Wall -Wextra -Werror
+
+all :$(NAME)
 
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 $(OBJ) : $(FILES)
-	gcc $(FLAGS) -c $(FILES)
+	@gcc $(FLAGS) -c $(FILES)
+
+bonus:
+	@gcc $(FLAGS) -c $(BONUS)
+	@ar rcs $(NAME) $(BOBJECTS)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ) $(BOBJECTS)
+
 fclean:
-	rm -f $(NAME) $(OBJ)
+	@rm -f $(NAME) $(OBJ) $(BOBJECTS)
 
 re: fclean all
 
-.PHONY: re all fclean clean
+.PHONY: re all fclean clean bonus

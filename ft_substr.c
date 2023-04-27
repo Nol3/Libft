@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:12:13 by alcarden          #+#    #+#             */
-/*   Updated: 2023/04/21 17:02:32 by alcarden         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:25:40 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= (unsigned int)ft_strlen(s))
 	{
 		str = (char *)malloc(1);
+		if (!str)
+			return (0);
 		str[0] = '\0';
 		return (str);
 	}
-	if (len > (unsigned int)ft_strlen(s))
-		len = (unsigned int)ft_strlen(s);
+	if (len > (unsigned int)ft_strlen(s) - start)
+		len = (unsigned int)ft_strlen(s) - start;
 	str = (char *)malloc(len * sizeof(char) + 1);
 	if (!str)
 		return (0);
